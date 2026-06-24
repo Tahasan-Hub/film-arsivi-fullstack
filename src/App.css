@@ -1,0 +1,447 @@
+.film-kutu{
+    border: 1 px solid gray;
+    padding: 10px; 
+    margin: 10px; 
+    width:  220px; 
+    display: inline-block;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    min-width: 250px;
+}
+
+.film-afis{
+    width: 200px; 
+    height: 300px; 
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.sil-butonu{
+    margin-left: 10px;
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.film-ekleme-alani{
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.film-ekleme-alani input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.ekle-butonu{
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.yeni-film-ac-butonu{
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup-kutu{
+    border: 2px solid #28a745;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.popup-kutu h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.popup-kutu input{
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 8px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.popup-butonlar{
+    display: flex;
+    gap: 10px;
+}
+
+.iptal-butonu{
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.arama-alani{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.arama-kutusu{
+    width: 300px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.arama-kutusu:focus{
+    border-color: #007bff;
+}
+
+.begeni-butonu{
+    background-color: #ffeef0;
+    color: #ff4757;
+    border: 1px solid #ff4757;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    width: 130px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.begeni-butonu:hover{
+    background-color: #ff4757;
+    color: white;
+}
+
+.begeni-butonu:active{
+    transform: scale(0.9);
+}
+
+.buton-grubu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.karanlik-perde{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.ust-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.site-logo{
+    font-size: 26px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Yorum bulunduğu en dış çerçeve */
+.yorum-alani {
+    margin-top: 15px; /* Üstteki butonlarla arasına mesafe koy */
+    border-top: 1px solid #ccc; /* Araya ince gri bir çizgi çek (ayırıcı) */
+    padding-top: 10px; /* Çizgi ile içerik arasına biraz nefes alma payı bırak */
+}
+
+/* Yorumların alt alta dizildiği liste alanı */
+.yorum-listesi {
+    list-style-type: none; /* Maddelerin başındaki o çirkin siyah noktaları kaldır */
+    padding: 0; /* İç boşluğu sıfırla ki sola tam yaslansın */
+    text-align: left; /* TÜm yazıları sola daya */
+}
+
+/* Tek bir yorum maddesinin (satırının) tasarımı */
+.yorum-maddesi {
+    margin-bottom: 8px; /* Her yorumun arasına biraz boşluk koy ki birbirine girmesin */
+    font-size: 14px; /* Yorum yazılarının boyutunu tık küçült */
+}
+
+/* Ad ve Yorum metin kutularını tutan alan */
+.yorum-yazma-kutusu {
+    display: flex; /* İçindeki elemanları esnek düzene sok */
+    flex-direction: column; /* Kutuları yan yana değil, alt alta diz */
+    gap: 5px; /* Kutular ve buton arasına 5px boşluk koy */
+    margin-top: 10px; /* Üstteki eski yorumlardan biraz uzaklaştır */
+}
+
+/* Adınızı girin kutusu */
+.yorum-input {
+    padding: 5px; /* Kutunun içini genişlet, yazılar kenarlara yapışmasın */
+}
+
+/* Uzun yorum girilen büyük kutu */
+.yorum-textarea {
+    padding: 5px; /* Kutunun içini genişlet */
+    resize: none; /* Kullanıcının kutuyu sağından solundan çekiştirip sayfa düzenini bozmasını engelle */
+}
+
+/* Yorum Gönder Butonu */
+.yorum-gonder-butonu {
+    padding: 5px; /* Butonu biraz şişkin yap */
+    cursor:  pointer; /* Fare üzerine gelince ok işareti yerine el işareti çıksın (tıklanabilir hissi) */
+}
+
+/* --- YÖNETİCİ GİRİŞ/ÇIKIŞ BUTONU TASARIMI --- */
+.admin-giris-butonu {
+    margin-left: 10px; /* Arama kutusu ile buton arasına mesafe koy (Sıkışık durmasın) */
+    padding: 6px 12px; /* Butonun içini genişlet (Yazı kenarlara yapışmasın, kutu nefes alsın) */
+    cursor: pointer; /* Fare üzerine geldiğinde ok yerine el işareti çıksın */
+    background-color: #333; /* Butonun arka planını koyu gri yap (Şık dursun) */
+    color: white; /* İçindeki yazının ve kilit ikonlarının rengini beyaz yap */
+    border: 1px solid #555; /* Etrafına çok göze batmayan ince gri bir çerçeve çek */
+    border-radius: 4px; /* Köşelerini hafifçe yumuşat (Kutunun sivriliğini al) */
+    font-weight: bold; /* Yazıyı biraz kalınlaştır ki menüde dikkat çeksin */
+    transition: background-color 0.2s; /* Renk değişimlerinin pat diye değil, yumuşakça (animasyonlu) olmasını sağla */
+}
+
+/* Fare ile butonun üzerine gelindiğinde (Hover) çalışacak kısım */
+.admin-giris-butonu:hover {
+    background-color: #555; /* Fare üzerindeyken rengini bir tık aç ki kullanıcının butona odaklandığını anlaşılsın */
+}
+
+.yorum-maddesi {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.yorum-ust-kisi {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.yorum-tarih {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.yorum-metni {
+    margin: 5px 0 10px 0;
+    color: #333;
+}
+
+.yorum-kalp-butonu {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 15px;
+    padding: 4px 10px;
+    font-size: 0.9em;
+    transition: 0.2s;
+}
+
+.yorum-kalp-butonu:hover {
+    background: #f0f0f0;
+}
+
+/* Kalp ve Sil butonları kutusu */
+.yorum-alt-etkilesim {
+    display: flex; /* İçindeki butonları alt alta değil, yan yana (yatay) dizer */
+    gap: 10px; /* Kalp ve Sil butonlarının arasına birbirine yapışmamaları için 10 piksel boşluk bırakır */
+    margin-top: 10px; /* Üstteki yorum metni ile butonlar arasına mesafe koyar */
+}
+
+/* Admin Sil Butonu Tasarımı */
+.yorum-sil-butonu {
+    cursor: pointer;
+    border: 1px solid #ff4d4d; /* Butonun etrafına ince, kırmızı bir çerçeve çizer */
+    background: white; /* Butonun zemin rengini beyaz yapar */
+    color: #ff4d4d; /* İçindeki Sil yazısının ve ikonun rengini kırmızı yapar */
+    border-radius: 15px; /* Keskin köşeleri yumuşatır */
+    padding: 4px 10px; /* Yazı ile çerçevenin arasına boşluk bırakır (içeriden) */
+    font-size: 0.9em; /* Yazı boyutunu normal metne göre %10 daha ufak yapar */
+    transition: 0.2s; /* Hover (üzerine gelme) renk değişiminin küt diye değil, 0.2 saniyede yumuşakça geçmesini sağlar */ 
+}
+
+/* Admin Sil Butonu Vurgu Efekti (Hover) */
+.yorum-sil-butonu:hover {
+    background: #fff5f5; /* Fare butonun üzerine geldiğinde zemin rengini anlık olarak renge boyar */
+}
+
+.kalp-aktif {
+    background-color: #fff0f0;
+    border: 1px solid #ff4d4d; 
+    color: #ff4d4d;  /* Yazıyı ve butonu kırmızımsı yapar */
+}
+
+/* -------------------------------------------------------------------  */
+/*                    YORUM ÇEKMECESİ (INSTAGRAM STİLİ)                */
+
+/* Ana ekrandaki tetikleyici buton */
+.yorum-tetikleyici-buton{
+    width: 100%; /* Kutuya tam sığsın diye genişliği %100 yaptık */
+    padding: 10px; /* İçeriden boşluk verdik ki buton şişkin dursun */
+    background-color: #f0f2f5; /* Instagram'ın meşhur hafif gri arkaplanı */
+    border: 1px solid #ddd; /* İnce, zarif bir çerçeve çizdik */
+    border-radius: 8px; /* Köşelerini yumuşattık */
+    cursor: pointer; /* Fare üzerine gelince el işareti çıksın */
+    font-weight: bold; /* Yazıyı kalınlaştırdık */
+    color: #333; /* Yazı rengini koyu gri yaptık */
+    transition: 0.2s; /* Rengi aniden değil, yumuşakça değişsin */ 
+}
+
+.yorum-tetikleyici-buton:hover {
+    background-color: #e4e6e9; /* Fare üzerine gelince hafifçe koyulaşsın */
+}
+
+/*                 ARKA PLANI KARARTAN SİYAH PERDE              */
+.yorum-perdesi {
+    position: fixed; /* Ekranı aşağı kaydırsan bile bu perde sabit kalsın */
+    top: 0; /* Ekranın en tepesinden başlasın */
+    left: 0; /* Ekranın en solundan başlasın */
+    width: 100vw; /* Ekranın tüm genişliğini (genişlik) kaplasın */
+    height: 100vh; /* Ekranın tüm yüksekliğini (boy) kaplasın */
+    background-color: rgba(0, 0, 0, 0.6); /* Siyah renk ver ve %60 şeffaf yap (Arkadaki film görünsün) */
+    z-index: 1000; /* Sitedeki diğer bütün resimlerin/yazıların ÜSTÜNDE dursun */
+    display: flex; /* İçindeki çekmeceyi hizalayabilmek için flex motorunu açtık */
+    justify-content: flex-end; /* Çekmeceyi ekranın SAĞ tarafına yasla */
+}
+
+/* Sağdan Açılan Beyaz Çekmece */
+.yorum-cekmece{
+    width: 400px; /* Çekmecenin genişliği 400 piksel olsun */
+    max-width: 100%; /* Telefondan girilirse ekrandan taşmasın, %100'de kalsın */
+    height: 100%; /* Ekranın en üstünden en altına kadar tam uzansın */
+    background-color: white; /* Çekmecenin içi bembeyaz olsun */
+    display: flex; /* İçindeki başlığı, listeyi ve alt kısmı dizebilmek için motoru açtık */
+    flex-direction: column; /* İçindekileri YUKARIDAN AŞAĞIYA doğru alt alta diz */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); /* Çekmecenin sol tarafına siyah bir gölge vur */
+    animation: saga-kayma 0.3s ease-out; /* Aşağıda yazdığımız süzülme animasyonunu 0.3 saniyede oynat */
+}
+
+/*           ÇEKMECENİN SÜZÜLME ANİMASYONU              */
+@keyframes saga-kayma{
+    from { transform: translateX(100%); } /* Başlangıç noktası: Ekranın sağında, tamamen görünmez bölgede bekle */
+    to { transform: translateX(0); } /* Bitiş noktası: Tam olması gereken yere (0 noktasına) kay */
+}
+
+/* ÇEKMECE BAŞLIĞI VE KAPATMA BUTONU */
+.yorum-cekmece-baslik {
+    padding: 15px 20px; /* İçeriden boşluklar verdik */
+    border-bottom: 1px solid #eee; /* Başlığın hemen altına ince gri bir çizgi çektik */
+    display: flex; /* Yazıyı ve X butonunu hizalamak için motoru açtık */
+    justify-content: space-between; /* Yazıyı en sola, X butonunu en sağa ittirdik */
+    align-items: center; /* Dikeyde (yukarı-aşağı) tam ortaladık */
+}
+
+.yorum-cekmece-baslik h3 {
+    margin: 0; /* H3 etiketinin kendi varsayılan boşluklarını sıfırladık */
+    font-size: 18px; /* Yazıyı biraz büyüttük */
+}
+
+.yorum-cekmece-baslik button {
+    background: none; /* Çarpı butonunun arka planını sildik */
+    border: none; /* Butonun dış çerçevesini sildik (sadece X yazısı kaldı) */
+    font-size: 20px; /* Çarpı işaretini büyüttük */
+    cursor: pointer; /* Fare üzerine gelince el işareti çıksın */
+    color: #888; /* Rengini gri yaptık */
+}
+
+/* Yorumların Kayacağı Yer */
+.yorum-cekmece-liste-alani {
+    flex: 1; /* Esneklik kuralı: Başlıktan ve alt kısımdan artan TÜM BOŞLUĞU sen kapla */
+    overflow-y: auto; /* Dikkat: Yorumlar çok uzarsa sayfayı değil, sadece bu kutuyu AŞAĞI KAYDIR (Scroll) */
+    padding: 20px; /* Yorumların kenarlara yapışmaması için içeriden boşluk verdik */
+}
+
+/* YORUM YAZMA KUTUSU */
+.yorum-cekmece-alt-kisim {
+    padding: 15px 20px; /* İçeriden boşluk verdik */
+    border-top: 1px solid #eee; /* Orta alandan ayrılması için ÜSTÜNE ince gri çizgi çektik */
+    background-color: #fafafa; /* Orta alandan çok hafif farklı dursun diye çok uçuk bir gri yaptık */
+    flex-shrink: 0; /* Üstteki alan ne kadar uzarsa uzasınü bu alt kısmı ASLA ezmeü onu ekranın dibinde sabit tut */
+}
+
+/* 7. YORUM YAZMA KUTULARI (İNSTAGRAM MAKYAJI) */
+.yorum-yazma-kutusu {
+  display: flex;
+  flex-direction: column; /* İsim, Yorum ve Butonu alt alta diz */
+  gap: 10px; /* Aralarına 10'ar piksel nefes alma boşluğu bırak */
+}
+
+/* Metin kutularının genel şekli */
+.yorum-input, .yorum-textarea {
+  width: 100%; /* Kutuyu tam genişlet */
+  padding: 10px; /* İçerden boşluk ver */
+  border: 1px solid #ddd; /* İnce, zarif bir çerçeve */
+  border-radius: 8px; /* Yumuşak köşeler */
+  font-family: inherit; /* Yazı tipini siteden alsın (robotik durmasın) */
+  outline: none; /* Tıklayınca tarayıcının attığı o çirkin siyah kalın çerçeveyi iptal et */
+  box-sizing: border-box; /* Taşmaları engelle */
+}
+
+.yorum-textarea {
+  resize: none; /* Kullanıcı kutunun sağ altından tutup sağa sola çekiştiremesin, yapıyı bozmasın */
+  height: 80px; /* Yorum yazmak için genişçe bir alan (boy) verdik */
+}
+
+/* Kutunun içine tıklanınca (odaklanınca) çerçevenin rengi değişsin */
+.yorum-input:focus, .yorum-textarea:focus {
+  border-color: #a8a8a8; /* İnstagram tarzı hafif koyu gri belirginleşme */
+}
+
+/* GÖNDER BUTONU */
+.yorum-gonder-butonu {
+  background-color: #0095f6; /* İnstagram'ın o meşhur canlı mavisi */
+  color: white; /* Yazı rengi beyaz */
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s; /* Üzerine gelince renk yumuşakça değişsin */
+}
+
+.yorum-gonder-butonu:hover {
+  background-color: #007bb5; /* Fare gelince mavi biraz koyulaşsın */
+}
