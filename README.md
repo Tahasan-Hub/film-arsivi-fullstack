@@ -17,7 +17,7 @@ Bu proje, kullanıcıların filmleri listeleyebildiği, filmlere yorum yapabildi
 * Saf CSS (Özel animasyonlar ve Flexbox mimarisi)
 
 **Backend (Arka Yüz):**
-* Java 17 & Spring Boot
+* Java 21 & Spring Boot
 * Spring Data JPA (Hibernate)
 * PostgreSQL (İlişkisel Veritabanı)
 
