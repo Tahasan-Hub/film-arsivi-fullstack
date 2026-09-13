@@ -9,6 +9,9 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:5173")
 public class FilmController {
     
+    @org.springframework.beans.factory.annotation.Value ("${proje.gizli.anahtar}")
+    private String gercekSifre;
+
     private final FilmRepository filmRepository;
 
     public  FilmController(FilmRepository filmRepository) {
@@ -23,7 +26,7 @@ public class FilmController {
     @PostMapping
     public List<Film> filmiEkle(@RequestBody Film yeniFilm, @RequestHeader(value = "Gizli-Anahtar", required = false) String gizliAnahtar) {
         
-        if(gizliAnahtar == null || !gizliAnahtar.equals("1234")) {
+        if(gizliAnahtar == null || !gizliAnahtar.equals(gercekSifre)) {
             throw new RuntimeException("Erişim reddedildi! Geçersiz güvenlik anahtarı.");
         }
         filmRepository.save(yeniFilm);
@@ -33,7 +36,7 @@ public class FilmController {
     @DeleteMapping("/{id}")
     public List<Film> filmiSil(@PathVariable Long id, @RequestHeader(value = "Gizli-Anahtar", required = false) String gizliAnahtar) {
         
-        if(gizliAnahtar == null || !gizliAnahtar.equals("1234")) {
+        if(gizliAnahtar == null || !gizliAnahtar.equals(gercekSifre)) {
             //Eğer anahtar yoksa veya şifre yanlışsa, işlemi iptal et ve suratına hatayı çarp!
             throw new RuntimeException("Erişim reddedildi! Geçersiz veya eksik güvenlik anahtarı.");
         }
@@ -43,7 +46,7 @@ public class FilmController {
 
     @PutMapping("/{id}")
     public List<Film> filmiGuncelle(@PathVariable Long id, @RequestBody Film guncelBilgiler, @RequestHeader(value = "Gizli-Anahtar", required = false) String gizliAnahtar) {
-        if(gizliAnahtar == null || !gizliAnahtar.equals("1234")) {
+        if(gizliAnahtar == null || !gizliAnahtar.equals(gercekSifre)) {
             throw new RuntimeException("Erişim reddedildi! Geçersiz güvenlik anahtarı.");
         }
 

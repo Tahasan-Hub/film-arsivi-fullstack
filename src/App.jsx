@@ -443,7 +443,7 @@ const sifreKontrolEt = () => {
       
       <div className="film-listesi">
         {filmler
-          .filter((film) => film.ad.toLowerCase().includes(aramaMetni.toLowerCase()))
+          .filter((film) => (film.ad || "").toLowerCase().includes(aramaMetni.toLowerCase()))
           .map((film) => (
             <FilmKarti
               key={film.id}

@@ -2,10 +2,7 @@ package com.filmarsivi.backend;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 
@@ -26,7 +23,7 @@ public class YorumController {
     private final FilmRepository filmRepository;
 
     // Doğum Odası (Constructor): Controller ilk çalıştığında kütüphanecileri elinden tutup içeri alıyor (Dependency Injection)
-    public YorumController(YorumRepository yorumRepository, FilmRepository filmRepository, BackendApplication backendApplication) {
+    public YorumController(YorumRepository yorumRepository, FilmRepository filmRepository) {
         this.yorumRepository = yorumRepository;
         this.filmRepository = filmRepository;
     }
